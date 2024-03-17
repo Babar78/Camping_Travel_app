@@ -21,7 +21,7 @@ const ContactUs = () => {
   return (
     <>
       <div className="bg-gradient" />
-      <section className="min-h-[calc(100vh-98px)] max-container padding-container flex flex-col items-center xl:gap-14 gap-10">
+      <section className="min-h-[calc(100vh-100px)] max-container padding-container flex flex-col items-center xl:gap-14 gap-10">
         <div className="headingContent space-y-3 flex flex-col items-center mt-5">
           <h1 className="bold-28 lg:bold-52 capitalize text-center text-green-90 max-w-[995px]">
             <strong>
