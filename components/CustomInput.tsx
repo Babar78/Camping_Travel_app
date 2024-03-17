@@ -22,7 +22,6 @@ interface InputProps {
   value?: string;
   endormentPosition?: "start" | "end";
   backgroundColor?: string;
-  color?: string;
   onUpdate: (e: string) => void;
   required?: boolean;
 }
@@ -38,7 +37,6 @@ const CustomInput = ({
   value,
   endormentPosition,
   backgroundColor,
-  color,
   onUpdate,
   required,
 }: InputProps) => {
@@ -62,6 +60,7 @@ const CustomInput = ({
             value={value}
             onChange={(e) => onUpdate(e.target.value)}
             type={showPassword ? "text" : "password"}
+            style={{ backgroundColor: backgroundColor }}
             required={required}
             endAdornment={
               <InputAdornment position="end">
@@ -81,17 +80,17 @@ const CustomInput = ({
 
       {/* Text Field */}
       {inputFieldType === "text-field" && (
-        <TextField
-          id={id}
-          label={label}
-          type={type}
-          placeholder={placeholder}
-          variant={variant}
-          onChange={(e) => onUpdate(e.target.value)}
-          value={value}
-          required={required}
-          fullWidth
-        />
+        <FormControl sx={{ width: "100%" }} variant={variant}>
+          <InputLabel htmlFor={id}>{label}</InputLabel>
+          <FilledInput
+            id={id}
+            value={value}
+            onChange={(e) => onUpdate(e.target.value)}
+            type={type}
+            style={{ backgroundColor: backgroundColor }}
+            required={required}
+          />
+        </FormControl>
       )}
 
       {inputFieldType === "countries-select" && (
@@ -104,6 +103,7 @@ const CustomInput = ({
             onUpdate(selectedOption?.label!);
           }}
           getOptionLabel={(option) => option.label}
+          style={{ backgroundColor: backgroundColor }}
           renderOption={(props, option) => (
             <Box
               component="li"

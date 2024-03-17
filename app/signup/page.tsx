@@ -30,7 +30,6 @@ const Signup = () => {
 
   return (
     <>
-      <p className="text-black">Country: {data.country}</p>
       <div className="lg:grid grid-cols-2 w-screen h-screen relative max-[1024px]:bg-login-bg bg-cover bg-center flex justify-center items-center md:p-0 p-10">
         <div className="space-y-5 bg-white rounded-2xl p-10 flex flex-col justify-center items-center">
           <Image
@@ -114,7 +113,7 @@ const Signup = () => {
           </form>
           <p className="regular-14 text-gray-30 text-center">
             Already have an account?{" "}
-            <Link href="/login" className="underline font-bold text-green-50">
+            <Link href="/login" className="underline text-green-50">
               Login
             </Link>
           </p>

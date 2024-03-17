@@ -22,7 +22,7 @@ const Login = () => {
   return (
     <>
       <div className="lg:grid grid-cols-2 w-screen h-screen relative max-[1024px]:bg-login-bg bg-cover bg-center flex justify-center items-center md:p-0 p-10">
-        <div className="space-y-5 bg-white rounded-2xl p-10 flex flex-col justify-center items-center">
+        <div className="space-y-5 lg:bg-transparent bg-gradient-to-t from-[rgba(255,255,255,0.1)] to-[rgba(255,255,255,0.2)] lg:border-0 border-[0.5px] rounded-2xl p-10 flex flex-col justify-center items-center">
           <Image
             src="/hilink-logo.svg"
             alt="logo"
@@ -30,7 +30,7 @@ const Login = () => {
             height={40}
             className="w-auto h-auto min-w-[150px]"
           />
-          <h1 className="regular-24 text-green-90">Login</h1>
+          <h1 className="regular-24 text-white">Login</h1>
           <form className="space-y-5 max-w-[500px]">
             <CustomInput
               id="email"
@@ -39,6 +39,7 @@ const Login = () => {
               inputFieldType="text-field"
               variant="filled"
               onUpdate={(newValue) => handleChange(newValue, "email")}
+              backgroundColor="white"
               value={data.email}
               required
             />
@@ -48,12 +49,13 @@ const Login = () => {
               inputFieldType="password"
               variant="filled"
               onUpdate={(newValue) => handleChange(newValue, "password")}
+              backgroundColor="white"
               value={data.password}
               required
             />
 
             <button
-              className={`flexCenter gap-3 rounded-md border w-full bg-green-50 text-white py-2 px-3`}
+              className={`flexCenter gap-3 rounded-md w-full bg-green-50 text-white py-2 px-3`}
               type="submit"
             >
               <label className="regular-16 whitespace-nowrap cursor-pointer">
@@ -63,7 +65,7 @@ const Login = () => {
           </form>
           <p className="regular-14 text-gray-30 text-center">
             Don't have an account?{" "}
-            <Link href="/signup" className="underline font-bold text-green-50">
+            <Link href="/signup" className="underline text-green-50">
               Register
             </Link>
           </p>
