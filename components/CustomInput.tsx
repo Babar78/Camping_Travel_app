@@ -56,17 +56,24 @@ const CustomInput = ({
 
   // State management of Background Color of input fields according to screen width
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener("resize", handleResize);
+    if (typeof window !== 'undefined') {
+      // Access window object only in the browser environment
+      setWindowWidth(window.innerWidth);
+      window.addEventListener('resize', handleResize);
+    }
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      if (typeof window !== 'undefined') {
+        // Remove event listener only in the browser environment
+        window.removeEventListener('resize', handleResize);
+      }
     };
   }, []);
 

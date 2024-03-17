@@ -1,9 +1,9 @@
 "use client";
 import CustomInput from "@/components/CustomInput";
-import { log } from "console";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import bcrypt from "bcryptjs";
 
 type FormProps = {
   username: string;
@@ -27,6 +27,52 @@ const Signup = () => {
   const handleChange = (e: string, field: keyof FormProps) => {
     setData({ ...data, [field]: e });
   };
+  // Submit Form
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (data.password !== data.confirmPassword) {
+      alert("Passwords do not match");
+    } else {
+      const hashedPassword = await bcrypt.hash(data.password, 10);
+
+      const updatedData = {
+        ...data,
+        password: hashedPassword,
+      };
+
+      try {
+        const res = await fetch("/api/signup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedData),
+        });
+
+        // if user already exists show aleat based on response status
+        if (res.status === 400) {
+          const resData = await res.json();
+          alert(resData.message);
+        }
+
+        if (res.ok) {
+          const resData = await res.json();
+          console.log(resData);
+
+          setData({
+            username: "",
+            email: "",
+            phone: "",
+            country: "",
+            password: "",
+            confirmPassword: "",
+          });
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  };
 
   return (
     <>
@@ -40,7 +86,7 @@ const Signup = () => {
             className="w-auto h-auto min-w-[150px]"
           />
           <h1 className="regular-24 text-white">Signup</h1>
-          <form className="space-y-5 max-w-[500px]">
+          <form className="space-y-5 max-w-[500px]" onSubmit={handleSubmit}>
             <CustomInput
               id="username"
               label="Username"
