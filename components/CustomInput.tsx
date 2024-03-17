@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import FormControl from "@mui/material/FormControl";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -40,7 +40,7 @@ const CustomInput = ({
   onUpdate,
   required,
 }: InputProps) => {
-  const [showPassword, setShowPassword] = React.useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -49,6 +49,22 @@ const CustomInput = ({
   ) => {
     event.preventDefault();
   };
+
+  // State management of Background Color of input fields according to screen width
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -60,7 +76,10 @@ const CustomInput = ({
             value={value}
             onChange={(e) => onUpdate(e.target.value)}
             type={showPassword ? "text" : "password"}
-            style={{ backgroundColor: backgroundColor }}
+            style={{
+              // apply background property if screen width is less than 1024px
+              backgroundColor: windowWidth < 1024 ? backgroundColor : "",
+            }}
             required={required}
             endAdornment={
               <InputAdornment position="end">
@@ -87,7 +106,10 @@ const CustomInput = ({
             value={value}
             onChange={(e) => onUpdate(e.target.value)}
             type={type}
-            style={{ backgroundColor: backgroundColor }}
+            style={{
+              // apply background property if screen width is less than 1024px
+              backgroundColor: windowWidth < 1024 ? backgroundColor : undefined,
+            }}
             required={required}
           />
         </FormControl>
@@ -103,8 +125,6 @@ const CustomInput = ({
             onUpdate(selectedOption?.label!);
           }}
           getOptionLabel={(option) => option.label}
-          style={{ backgroundColor: backgroundColor }}
-          className="rounded-t-md"
           renderOption={(props, option) => (
             <Box
               component="li"
@@ -128,6 +148,12 @@ const CustomInput = ({
               {...params}
               label={label}
               variant={variant}
+              className="rounded-t-md"
+              style={{
+                // apply background property if screen width is less than 1024px
+                backgroundColor:
+                  windowWidth < 1024 ? backgroundColor : undefined,
+              }}
               inputProps={{
                 ...params.inputProps,
                 autoComplete: "new-country", // disable autocomplete and autofill
