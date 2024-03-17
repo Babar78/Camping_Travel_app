@@ -22,7 +22,7 @@ import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const pathname = usePathname();
-  const [isLoggedIn, setIsLoggedIn] = React.useState(true);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
   const [openProfileMenu, setOpenProfileMenu] =
     React.useState<HTMLElement | null>(null);
@@ -155,7 +155,7 @@ const Navbar = () => {
                   Account Settings
                 </MenuItem>
                 <Divider />
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={() => setIsLoggedIn(false)}>
                   <ListItemIcon>
                     <Logout
                       sx={{
