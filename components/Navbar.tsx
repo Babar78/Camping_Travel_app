@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     pathname !== "/login" &&
     pathname !== "/signup" && (
-      <nav className="flexBetween max-container padding-container relative z-30 py-5">
+      <nav className="flexBetween max-container padding-container relative z-30 py-5 bg-transparent">
         <Link href="/">
           <Image
             src="/hilink-logo.svg"
@@ -30,7 +30,7 @@ const Navbar = () => {
               <Link
                 href={link.href}
                 passHref
-                className={`regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold ${
+                className={`regular-16 text-gray-50 flexCenter cursor-pointer transition-all hover:font-bold ${
                   pathname === link.href ? "bold-16" : ""
                 }`}
               >

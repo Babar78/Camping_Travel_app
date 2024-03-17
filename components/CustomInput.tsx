@@ -20,6 +20,8 @@ interface InputProps {
   variant: "filled" | "outlined" | "standard";
   icon?: string;
   value?: string;
+  multiline?: boolean;
+  rows?: number;
   endormentPosition?: "start" | "end";
   backgroundColor?: string;
   onUpdate: (e: string) => void;
@@ -35,6 +37,8 @@ const CustomInput = ({
   variant,
   icon,
   value,
+  multiline,
+  rows,
   endormentPosition,
   backgroundColor,
   onUpdate,
@@ -68,6 +72,7 @@ const CustomInput = ({
 
   return (
     <>
+      {/* Password Field */}
       {inputFieldType === "password" && (
         <FormControl sx={{ width: "100%" }} variant={variant}>
           <InputLabel htmlFor={id}>{label}</InputLabel>
@@ -113,6 +118,21 @@ const CustomInput = ({
             required={required}
           />
         </FormControl>
+      )}
+
+      {/* Text Area Field */}
+      {inputFieldType === "text-area" && (
+        <TextField
+          id={id}
+          label={label}
+          value={value}
+          multiline={multiline}
+          rows={rows}
+          onChange={(e) => onUpdate(e.target.value)}
+          required={required}
+          variant={variant}
+          fullWidth
+        />
       )}
 
       {inputFieldType === "countries-select" && (
