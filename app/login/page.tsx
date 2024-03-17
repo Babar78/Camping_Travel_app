@@ -3,6 +3,7 @@ import CustomInput from "@/components/CustomInput";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 type FormProps = {
   email: string;
@@ -10,6 +11,9 @@ type FormProps = {
 };
 
 const Login = () => {
+  // Global
+  const router = useRouter();
+
   const [data, setData] = React.useState({
     email: "",
     password: "",
@@ -17,6 +21,42 @@ const Login = () => {
 
   const handleChange = (e: string, field: keyof FormProps) => {
     setData({ ...data, [field]: e });
+  };
+
+  // Submit Form
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      // if user already exists show aleat based on response status
+      if (res.status === 400) {
+        const resData = await res.json();
+        alert(resData.message);
+      }
+
+      if (res.ok) {
+        const resData = await res.json();
+        console.log(resData);
+
+        router.replace("/");
+
+        setData({
+          email: "",
+          password: "",
+        });
+      }
+    } catch (err) {
+      alert("An error occurred while logging in the user");
+      console.log(err);
+    }
   };
 
   return (
@@ -31,7 +71,7 @@ const Login = () => {
             className="w-auto h-auto min-w-[150px]"
           />
           <h1 className="regular-24 text-white">Login</h1>
-          <form className="space-y-5 max-w-[500px]">
+          <form className="space-y-5 max-w-[500px]" onSubmit={handleSubmit}>
             <CustomInput
               id="email"
               label="Email"
@@ -55,12 +95,10 @@ const Login = () => {
             />
 
             <button
-              className={`flexCenter gap-3 rounded-md w-full bg-green-50 text-white py-2 px-3 min-h-[56px]`}
+              className={`regular-16 whitespace-nowrap rounded-md w-full bg-green-50 text-white py-2 px-3 min-h-[56px]`}
               type="submit"
             >
-              <label className="regular-16 whitespace-nowrap cursor-pointer">
-                Login
-              </label>
+              Login
             </button>
           </form>
           <p className="regular-14 text-gray-20 text-center">

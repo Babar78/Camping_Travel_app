@@ -29,6 +29,8 @@ const Signup = () => {
   };
   // Submit Form
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    console.log("Called");
+
     e.preventDefault();
     if (data.password !== data.confirmPassword) {
       alert("Passwords do not match");
@@ -48,6 +50,8 @@ const Signup = () => {
           },
           body: JSON.stringify(updatedData),
         });
+
+        console.log("API CALLED");
 
         // if user already exists show aleat based on response status
         if (res.status === 400) {
@@ -155,12 +159,10 @@ const Signup = () => {
               required
             />
             <button
-              className={`flexCenter gap-3 rounded-md w-full bg-green-50 text-white py-2 px-3 min-h-[56px]`}
+              className={`rounded-md w-full bg-green-50 text-white py-2 px-3 min-h-[56px] regular-16 whitespace-nowrap`}
               type="submit"
             >
-              <label className="regular-16 whitespace-nowrap cursor-pointer">
-                Create Account
-              </label>
+              Create Account
             </button>
           </form>
           <p className="regular-14 text-gray-20 text-center">
