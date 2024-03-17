@@ -4,16 +4,19 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+type FormProps = {
+  email: string;
+  password: string;
+};
+
 const Login = () => {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [data, setData] = React.useState({
+    email: "",
+    password: "",
+  });
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value);
+  const handleChange = (e: string, field: keyof FormProps) => {
+    setData({ ...data, [field]: e });
   };
 
   return (
@@ -30,15 +33,13 @@ const Login = () => {
           <h1 className="regular-24 text-green-90">Login</h1>
           <form className="space-y-5 max-w-[500px]">
             <CustomInput
-              id="user-email"
+              id="email"
               label="Email"
               type="email"
               inputFieldType="text-field"
               variant="filled"
-              onChange={handleEmailChange}
-              value={email}
-              backgroundColor="white"
-              color="black"
+              onUpdate={(newValue) => handleChange(newValue, "email")}
+              value={data.email}
               required
             />
             <CustomInput
@@ -46,10 +47,8 @@ const Login = () => {
               label="Password"
               inputFieldType="password"
               variant="filled"
-              onChange={handlePasswordChange}
-              value={password}
-              backgroundColor="white"
-              color="black"
+              onUpdate={(newValue) => handleChange(newValue, "password")}
+              value={data.password}
               required
             />
 

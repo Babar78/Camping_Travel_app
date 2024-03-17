@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export type FormProps = {
+type FormProps = {
   username: string;
   email: string;
   phone: string;
