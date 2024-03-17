@@ -11,7 +11,8 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    pathname != "/login" && (
+    pathname !== "/login" &&
+    pathname !== "/signup" && (
       <nav className="flexBetween max-container padding-container relative z-30 py-5">
         <Link href="/">
           <Image

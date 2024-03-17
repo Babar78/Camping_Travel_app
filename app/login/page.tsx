@@ -62,12 +62,9 @@ const Login = () => {
               </label>
             </button>
           </form>
-          <p className="regular-14 text-gray-40 text-center">
+          <p className="regular-14 text-gray-30 text-center">
             Don't have an account?{" "}
-            <Link
-              href="/register"
-              className="underline font-bold text-green-50"
-            >
+            <Link href="/signup" className="underline font-bold text-green-50">
               Register
             </Link>
           </p>

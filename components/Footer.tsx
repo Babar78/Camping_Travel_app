@@ -9,7 +9,8 @@ const Footer = () => {
   const pathname = usePathname();
 
   return (
-    pathname != "/login" && (
+    pathname !== "/login" &&
+    pathname !== "/signup" && (
       <footer className="flexCenter mb-24">
         <div className="padding-container max-container flex w-full flex-col gap-14">
           <div className="flex flex-col items-start justify-center gap-[10%] md:flex-row">
@@ -69,7 +70,7 @@ const Footer = () => {
 
           <div className="border bg-gray-20" />
           <p className="regular-14 w-full text-center text-gray-30">
-            2023 Hilink | All rights reserved
+            2023 Hilink | &copy; All rights reserved
           </p>
         </div>
       </footer>
