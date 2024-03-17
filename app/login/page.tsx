@@ -55,7 +55,7 @@ const Login = () => {
             />
 
             <button
-              className={`flexCenter gap-3 rounded-md w-full bg-green-50 text-white py-2 px-3`}
+              className={`flexCenter gap-3 rounded-md w-full bg-green-50 text-white py-2 px-3 min-h-[56px]`}
               type="submit"
             >
               <label className="regular-16 whitespace-nowrap cursor-pointer">
@@ -63,7 +63,7 @@ const Login = () => {
               </label>
             </button>
           </form>
-          <p className="regular-14 text-gray-30 text-center">
+          <p className="regular-14 text-gray-20 text-center">
             Don't have an account?{" "}
             <Link href="/signup" className="underline text-green-50">
               Register

@@ -104,6 +104,7 @@ const CustomInput = ({
           }}
           getOptionLabel={(option) => option.label}
           style={{ backgroundColor: backgroundColor }}
+          className="rounded-t-md"
           renderOption={(props, option) => (
             <Box
               component="li"

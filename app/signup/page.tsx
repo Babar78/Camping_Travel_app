@@ -31,7 +31,7 @@ const Signup = () => {
   return (
     <>
       <div className="lg:grid grid-cols-2 w-screen h-screen relative max-[1024px]:bg-login-bg bg-cover bg-center flex justify-center items-center md:p-0 p-10">
-        <div className="space-y-5 bg-white rounded-2xl p-10 flex flex-col justify-center items-center">
+        <div className="space-y-5 lg:bg-transparent bg-gradient-to-t from-[rgba(255,255,255,0.1)] to-[rgba(255,255,255,0.2)] lg:border-0 border-[0.5px] rounded-2xl p-10 flex flex-col justify-center items-center">
           <Image
             src="/hilink-logo.svg"
             alt="logo"
@@ -39,7 +39,7 @@ const Signup = () => {
             height={40}
             className="w-auto h-auto min-w-[150px]"
           />
-          <h1 className="regular-24 text-green-90">Signup</h1>
+          <h1 className="regular-24 text-white">Signup</h1>
           <form className="space-y-5 max-w-[500px]">
             <CustomInput
               id="username"
@@ -47,6 +47,7 @@ const Signup = () => {
               type="text"
               inputFieldType="text-field"
               variant="filled"
+              backgroundColor="white"
               onUpdate={(newValue) => handleChange(newValue, "username")}
               value={data.username}
               required
@@ -57,6 +58,7 @@ const Signup = () => {
               type="email"
               inputFieldType="text-field"
               variant="filled"
+              backgroundColor="white"
               onUpdate={(newValue) => handleChange(newValue, "email")}
               value={data.email}
               required
@@ -68,6 +70,7 @@ const Signup = () => {
               type="tel"
               inputFieldType="text-field"
               variant="filled"
+              backgroundColor="white"
               onUpdate={(newValue) => handleChange(newValue, "phone")}
               value={data.phone}
               required
@@ -78,6 +81,7 @@ const Signup = () => {
               label="Select Country"
               inputFieldType="countries-select"
               variant="filled"
+              backgroundColor="white"
               onUpdate={(newValue) => handleChange(newValue, "country")}
               value={data.country}
               required
@@ -88,6 +92,7 @@ const Signup = () => {
               label="Password"
               inputFieldType="password"
               variant="filled"
+              backgroundColor="white"
               onUpdate={(newValue) => handleChange(newValue, "password")}
               value={data.password}
               required
@@ -98,12 +103,13 @@ const Signup = () => {
               label="Confirm Password"
               inputFieldType="password"
               variant="filled"
+              backgroundColor="white"
               onUpdate={(newValue) => handleChange(newValue, "confirmPassword")}
               value={data.confirmPassword}
               required
             />
             <button
-              className={`flexCenter gap-3 rounded-md border w-full bg-green-50 text-white py-2 px-3`}
+              className={`flexCenter gap-3 rounded-md w-full bg-green-50 text-white py-2 px-3 min-h-[56px]`}
               type="submit"
             >
               <label className="regular-16 whitespace-nowrap cursor-pointer">
@@ -111,7 +117,7 @@ const Signup = () => {
               </label>
             </button>
           </form>
-          <p className="regular-14 text-gray-30 text-center">
+          <p className="regular-14 text-gray-20 text-center">
             Already have an account?{" "}
             <Link href="/login" className="underline text-green-50">
               Login
