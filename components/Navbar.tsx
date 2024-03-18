@@ -200,7 +200,7 @@ const Navbar = () => {
         </div>
 
         <div
-          className={`bg-white absolute w-screen top-[100px] left-0 transition-all duration-500 ${
+          className={`bg-white absolute w-screen top-[100px] left-0 transition-all duration-500 lg:hidden block ${
             openMobileNav
               ? "h-[calc(100vh-100px)] p-10 border-t-2 border-gray-10"
               : "h-0 p-0"
@@ -215,6 +215,7 @@ const Navbar = () => {
               <li key={index}>
                 <Link
                   href={link.href}
+                  onClick={handleMobileNav}
                   passHref
                   className={`regular-18 text-gray-50 flexCenter cursor-pointer hover:font-bold ${
                     pathname === link.href ? "bold-18" : ""

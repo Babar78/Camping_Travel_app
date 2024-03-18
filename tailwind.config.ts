@@ -35,6 +35,7 @@ module.exports = {
         'bg-img-2': "url('/img-2.png')",
         'feature-bg': "url('/feature-bg.png')",
         'login-bg': "linear-gradient(to bottom, rgba(48, 175, 91, 0.2), rgba(0, 0, 0)), url('/bg/login.jpg')",
+        'about-us-hero': "linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/bg/about-us-hero.jpg')",
         pattern: "url('/pattern.png')",
         'pattern-2': "url('/pattern-bg.png')",
       },
