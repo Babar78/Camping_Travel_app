@@ -1,6 +1,7 @@
 import Features from "@/sections/AboutUs/Features";
 import GetToNow from "@/sections/AboutUs/GetToKnow";
 import Hero from "@/sections/AboutUs/Hero";
+import DiscoverPassion from "@/sections/AboutUs/DiscoverPassion";
 import React from "react";
 
 const AboutUs = () => {
@@ -8,6 +9,7 @@ const AboutUs = () => {
     <>
       <Hero />
       <GetToNow />
+      <DiscoverPassion />
       <Features />
     </>
   );
