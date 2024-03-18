@@ -10,13 +10,13 @@ import GroupsIcon from "@mui/icons-material/Groups";
 const GetToKnow = () => {
   return (
     <section className="max-container padding-container py-20 lg:py-32 grid xl:grid-cols-7 md:grid-cols-4 lg:gap-20 gap-10 items-center">
-      <div className="grid grid-cols-2 gap-10 items-end md:col-span-3">
+      <div className="grid grid-cols-2 gap-10 items-end xl:col-span-3 md:col-span-2 h-full">
         <Image
           src="/sections/about-us/get-to-know-1.jpg"
           width={250} // Set width to a percentage value
           height={100}
           alt="Get to know 1"
-          className="rounded-full overflow-hidden h-[550px] w-full object-cover"
+          className="rounded-full overflow-hidden md:h-full h-[550px] w-full object-cover"
         />
         <div className="relative h-full flex flex-col justify-between w-full bg-green-90 rounded-full">
           <h2 className="lg:bold-28 bold-20 text-white text-center mt-14">
@@ -29,13 +29,13 @@ const GetToKnow = () => {
             width={250} // Set width to a percentage value
             height={100}
             alt="Get to know 1"
-            className="rounded-full overflow-hidden h-[400px] w-full object-cover"
+            className="rounded-full overflow-hidden md:h-full h-[400px] w-full object-cover"
           />
         </div>
       </div>
-      <div className="lg:col-span-4 md:col-span-2">
+      <div className="xl:col-span-4 md:col-span-2">
         <p className="uppercase text-green-50 regular-16">GET TO KNOW US</p>
-        <h2 className="bold-32 lg:max-w-[80%] text-green-90 mb-5 mt-3">
+        <h2 className="bold-40 lg:bold-64 text-green-90 mb-5 mt-3">
           Experience the World with Our Trevlo Company
         </h2>
         <p className="regular-16 text-gray-30 lg:max-w-[80%]">
