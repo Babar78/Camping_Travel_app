@@ -23,15 +23,23 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
   const pathname = usePathname();
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
-
+  const [openMobileNav, setOpenMobileNav] = React.useState(true);
   const [openProfileMenu, setOpenProfileMenu] =
     React.useState<HTMLElement | null>(null);
+
   const open = Boolean(openProfileMenu);
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setOpenProfileMenu(event.currentTarget);
   };
+
   const handleClose = () => {
     setOpenProfileMenu(null);
+  };
+
+  // Mobile Navbar
+  const handleMobileNav = () => {
+    setOpenMobileNav(!openMobileNav);
   };
 
   return (
@@ -170,13 +178,54 @@ const Navbar = () => {
           )}
         </div>
 
-        <Image
-          src="menu.svg"
-          alt="menu"
-          width={32}
-          height={32}
-          className="inline-block cursor-pointer lg:hidden"
-        />
+        <div
+          className={`lg:hidden ${openMobileNav ? "" : "space-y-[5px]"}`}
+          onClick={handleMobileNav}
+        >
+          <div
+            className={`bg-gray-50 w-[25px] rounded-full h-[3px] transform transition-all duration-500 ${
+              openMobileNav ? "rotate-45 translate-y-[-1px]" : null
+            }`}
+          ></div>
+          <div
+            className={`bg-gray-50 w-[25px] rounded-full h-[3px] ${
+              openMobileNav && "hidden"
+            }`}
+          ></div>
+          <div
+            className={`bg-gray-50 w-[25px] rounded-full h-[3px] transform transition-all duration-500 ${
+              openMobileNav ? "-rotate-45 translate-y-[-4px]" : null
+            }`}
+          ></div>
+        </div>
+
+        <div
+          className={`bg-white absolute w-screen top-[100px] left-0 transition-all duration-500 ${
+            openMobileNav
+              ? "h-[calc(100vh-100px)] p-10 border-t-2 border-gray-10"
+              : "h-0 p-0"
+          } `}
+        >
+          <ul
+            className={`space-y-5 opacity-0 transition-all duration-400 translate-y-[-10px] ${
+              openMobileNav ? "opacity-100 translate-y-0" : "opacity-0"
+            }`}
+          >
+            {NAV_LINKS.map((link, index) => (
+              <li key={index}>
+                <Link
+                  href={link.href}
+                  passHref
+                  className={`regular-18 text-gray-50 flexCenter cursor-pointer hover:font-bold ${
+                    pathname === link.href ? "bold-18" : ""
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </nav>
     )
   );
