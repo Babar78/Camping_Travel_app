@@ -10,7 +10,7 @@ import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 const ReadyToTravel = () => {
   //
   return (
-    <section className=" py-20 lg:py-32 bg-gray-10 mb-20">
+    <section className=" py-20 lg:py-32">
       <div className="max-container padding-container grid md:grid-cols-4 lg:gap-20 gap-10 items-center h-fit">
         <div className="md:col-span-2">
           <p className="uppercase text-green-50 regular-16">
@@ -62,14 +62,14 @@ const ReadyToTravel = () => {
         <div className="grid grid-cols-2 gap-10 md:col-span-2 max-h-[550px]">
           <div className="relative flex flex-col w-full rounded-full gap-10">
             <Image
-              src="/sections/about-us/get-to-know-2.jpg"
+              src="/sections/about-us/travel-4.jpg"
               width={250} // Set width to a percentage value
               height={100}
               alt="Get to know 1"
-              className="rounded-lg overflow-hidden h-[350px] w-full object-cover"
+              className="rounded-lg overflow-hidden h-[350px] w-full object-cover object-bottom"
             />
             <Image
-              src="/sections/about-us/get-to-know-2.jpg"
+              src="/sections/about-us/travel-3.jpg"
               width={250} // Set width to a percentage value
               height={100}
               alt="Get to know 1"
@@ -78,14 +78,14 @@ const ReadyToTravel = () => {
           </div>
           <div className="relative flex flex-col justify-between w-full rounded-full gap-10 h-[90%]">
             <Image
-              src="/sections/about-us/get-to-know-2.jpg"
+              src="/sections/about-us/travel-2.jpg"
               width={250} // Set width to a percentage value
               height={100}
               alt="Get to know 1"
               className="rounded-md overflow-hidden h-[250px] w-full object-cover"
             />
             <Image
-              src="/sections/about-us/get-to-know-2.jpg"
+              src="/sections/about-us/travel-1.jpg"
               width={250} // Set width to a percentage value
               height={100}
               alt="Get to know 1"

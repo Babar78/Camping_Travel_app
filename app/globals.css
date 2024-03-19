@@ -188,3 +188,8 @@ body {
   top: 100px;
   opacity: 0.15;
 }
+
+/* Swipper Pagination Color Customization */
+.swiper-pagination-bullet-active {
+  background-color: #30af5b !important;
+}

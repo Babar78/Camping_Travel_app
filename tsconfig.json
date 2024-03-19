@@ -22,6 +22,19 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/signup/route.ts", "app/api/auth/[...nextauth]/route.js", "app/login/page.tsx", "store/authSlice/authSlice.ts", "store/store.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/api/signup/route.ts",
+    "app/api/auth/[...nextauth]/route.js",
+    "app/login/page.tsx",
+    "store/authSlice/authSlice.ts",
+    "store/store.ts",
+    "components/TestimonialCard.tsx",
+    "components/CustomCarousel.tsx",
+    "sections/AboutUs/Testimonials.tsx"
+  ],
   "exclude": ["node_modules"]
 }
