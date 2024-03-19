@@ -46,7 +46,7 @@ const Testimonials = () => {
   }));
 
   return (
-    <section className="py-20 lg:py-32 bg-gray-10">
+    <section className="py-20 lg:py-32 bg-feature-bg bg-no-repeat bg-contain bg-center">
       <div className="max-container padding-container">
         <p className="uppercase text-green-50 regular-16 text-center">
           Testimonial

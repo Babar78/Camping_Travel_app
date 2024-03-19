@@ -37,6 +37,7 @@ module.exports = {
         'login-bg': "linear-gradient(to bottom, rgba(48, 175, 91, 0.2), rgba(0, 0, 0)), url('/bg/login.jpg')",
         'about-us-hero': "url('/bg/about-us-hero.jpg')",
         "about-us-perfect-camping": "url('/sections/about-us/perfectCamping.jpg')",
+        "about-us-stats": "url('/bg/about-us-stats.jpeg')",
         pattern: "url('/pattern.png')",
         'pattern-2': "url('/pattern-bg.png')",
       },
