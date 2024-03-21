@@ -4,7 +4,6 @@ import FeaturedDestinations from "@/sections/Destinations/FeaturedDestinations";
 import Hero from "@/sections/Destinations/Hero";
 import Images from "@/sections/Destinations/Images";
 import PlanYourTrip from "@/sections/Destinations/PlanYourTrip";
-import Tips from "@/sections/Destinations/Tips";
 import React from "react";
 
 const Destinations = () => {
@@ -14,7 +13,6 @@ const Destinations = () => {
       <FeaturedDestinations />
       <Images />
       <ExploreByRegion />
-      <Tips />
       <PlanYourTrip />
       <CallToAction />
     </>

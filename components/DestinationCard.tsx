@@ -21,7 +21,7 @@ const DestinationCard = ({
   amenities,
 }: DestinationCardProps) => {
   return (
-    <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
       <Image
         src={imgSrc}
         alt="featured-1"
@@ -31,7 +31,7 @@ const DestinationCard = ({
       />
       <div className="px-5 py-5">
         <Link href="#">
-          <h5 className="bold-28 text-green-90 dark:text-white">{title}</h5>
+          <h5 className="lg:bold-28 bold-20 text-green-90">{title}</h5>
         </Link>
         <p className="mt-1 -ml-[5px]">
           <LocationOnIcon className="text-green-50" />
@@ -93,7 +93,7 @@ const DestinationCard = ({
           </span>
         </div>
         <div className="flex items-center justify-between">
-          <span className="bold-18 text-green-90 dark:text-white">
+          <span className="bold-18 text-green-90">
             ${price} / night
           </span>
           <Link
