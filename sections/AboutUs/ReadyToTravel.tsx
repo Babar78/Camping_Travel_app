@@ -10,7 +10,7 @@ import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 const ReadyToTravel = () => {
   //
   return (
-    <section className=" py-20 lg:py-32">
+    <section className=" pb-20 lg:pb-32">
       <div className="max-container padding-container grid md:grid-cols-4 lg:gap-20 gap-10 items-center h-fit">
         <div className="md:col-span-2">
           <p className="uppercase text-green-50 regular-16">
