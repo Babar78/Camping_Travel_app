@@ -38,6 +38,7 @@ module.exports = {
         'about-us-hero': "url('/bg/about-us-hero.jpg')",
         "about-us-perfect-camping": "url('/sections/about-us/perfectCamping.jpg')",
         "about-us-stats": "url('/bg/about-us-stats.jpeg')",
+        "destinations-hero": "url('/bg/destinations-hero.jpg')",
         pattern: "url('/pattern.png')",
         'pattern-2': "url('/pattern-bg.png')",
       },

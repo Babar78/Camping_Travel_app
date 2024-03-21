@@ -2,7 +2,7 @@
 export const NAV_LINKS = [
   { href: '/', key: 'home', label: 'Home' },
   { href: '/about-us', key: 'about-us', label: 'About Us' },
-  { href: '/our-services', key: 'our-services', label: 'Our Services' },
+  { href: '/destinations', key: 'destinations', label: 'Destinations' },
   { href: '/tour-packages', key: 'tour-packages', label: 'Tour Packages ' },
   { href: '/contact_us', key: 'contact_us', label: 'Contact Us' },
 ];
