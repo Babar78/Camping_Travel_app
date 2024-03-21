@@ -6,7 +6,7 @@ import React from "react";
 import ReadyToTravel from "@/sections/AboutUs/ReadyToTravel";
 import Testimonials from "@/sections/AboutUs/Testimonials";
 import Stats from "@/sections/AboutUs/Stats";
-import CallToAction from "@/sections/AboutUs/CallToAction";
+import CallToAction from "@/components/CallToAction";
 
 const AboutUs = () => {
   return (

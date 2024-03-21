@@ -87,7 +87,6 @@ export const SOCIALS = {
 
 
 // SIGNUP PAGE
-
 export const COUNTRIES = [
   { id: '1', code: 'AD', label: 'Andorra', phone: '376' },
   {
@@ -553,4 +552,50 @@ export const COUNTRIES = [
   { id: '245', code: 'ZA', label: 'South Africa', phone: '27' },
   { id: '246', code: 'ZM', label: 'Zambia', phone: '260' },
   { id: '247', code: 'ZW', label: 'Zimbabwe', phone: '263' },
+];
+
+
+// DESTINATIONS PAGE
+
+export const FEATURED_DESTINATIONS = [
+  {
+    id: '1',
+    title: "Mountainview Camp",
+    location: "Rocky Mountains, Colorado",
+    imgSrc: "/sections/Destinations/Featured/featured-1.jpg",
+    amenities: "Scenic views, hiking trails",
+    price: 40
+  },
+  {
+    id: '2',
+    title: "Lakefront Retreat",
+    location: "Lake Tahoe, California",
+    imgSrc: "/sections/Destinations/Featured/featured-2.jpg",
+    amenities: "Lake access, water activities",
+    price: 60
+  },
+  {
+    id: '3',
+    title: "Forest Haven Campsite",
+    location: "Redwood National Park, California",
+    imgSrc: "/sections/Destinations/Featured/featured-3.jpg",
+    amenities: "Nature trails, wildlife viewing",
+    price: 45
+  },
+  // {
+  //   id: '4',
+  //   title: "Beachside Oasis",
+  //   location: "Outer Banks, North Carolina",
+  //   imgSrc: "/sections/Destinations/Featured/featured-4.jpg",
+  //   amenities: "Beach access, water sports",
+  //   price: 50
+  // },
+  // {
+  //   id: '5',
+  //   title: "Desert Dunes Campground",
+  //   location: "Joshua Tree National Park, California",
+  //   imgSrc: "/sections/Destinations/Featured/featured-5.jpg",
+  //   amenities: "Desert landscape, stargazing",
+  //   price: 35
+  // }
 ];

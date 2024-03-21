@@ -4,7 +4,7 @@ import MapIcon from "@mui/icons-material/Map";
 
 const PlanYourTrip = () => {
   return (
-    <section className="pb-20 lg:pb-32 max-container padding-container flex flex-col items-center gap-10">
+    <section className="py-20 lg:py-32 max-container padding-container flex flex-col items-center gap-10">
       <div className="headings">
         <p className="text-center regular-16 text-green-50 uppercase">
           Plan Your Trip

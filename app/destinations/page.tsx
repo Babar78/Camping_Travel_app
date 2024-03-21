@@ -1,3 +1,4 @@
+import CallToAction from "@/components/CallToAction";
 import ExploreByRegion from "@/sections/Destinations/ExploreByRegion";
 import FeaturedDestinations from "@/sections/Destinations/FeaturedDestinations";
 import Hero from "@/sections/Destinations/Hero";
@@ -11,10 +12,11 @@ const Destinations = () => {
     <>
       <Hero />
       <FeaturedDestinations />
+      <Images />
       <ExploreByRegion />
       <Tips />
       <PlanYourTrip />
-      <Images />
+      <CallToAction />
     </>
   );
 };
