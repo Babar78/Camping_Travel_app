@@ -557,7 +557,7 @@ export const COUNTRIES = [
 
 // DESTINATIONS PAGE
 
-export const FEATURED_DESTINATIONS = [
+export const TOUR_PACKAGES = [
   {
     id: '1',
     title: "Mountainview Camp",
@@ -599,3 +599,25 @@ export const FEATURED_DESTINATIONS = [
   //   price: 35
   // }
 ];
+
+export const DESTINATIONS = [
+  {
+    id: '1',
+    destination: "Rocky Mountains, Colorado",
+    imgSrc: "/sections/Destinations/Featured/featured-1.jpg",
+    tours: 15,
+  },
+  {
+    id: '2',
+    destination: "Lake Tahoe, California",
+    imgSrc: "/sections/Destinations/Featured/featured-2.jpg",
+    tours: 10,
+  },
+  {
+    id: '2',
+    destination: "Redwood National Park, California",
+    imgSrc: "/sections/Destinations/Featured/featured-3.jpg",
+    tours: 5,
+  },
+
+]

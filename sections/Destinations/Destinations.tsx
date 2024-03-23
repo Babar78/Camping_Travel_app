@@ -2,9 +2,10 @@ import React from "react";
 import DestinationCard from "@/components/DestinationCard";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
-import { FEATURED_DESTINATIONS } from "@/constants/index";
+import { DESTINATIONS, TOUR_PACKAGES } from "@/constants/index";
+import FeaturedDestinationCard from "@/components/FeaturedDestinationCard";
 
-const FeaturedDestinations = () => {
+const Destinations = () => {
   return (
     <section className="py-20 lg:py-32 max-container padding-container flex flex-col items-center gap-10">
       <div className="headings">
@@ -15,15 +16,13 @@ const FeaturedDestinations = () => {
           Discover Top Camping Spots
         </h2>
       </div>
-      <div className="cardsDiv mt-5 grid lg:grid-cols-3 md:grid-cols-2 gap-10 ">
-        {FEATURED_DESTINATIONS.map((destination) => (
-          <DestinationCard
-            key={destination.title}
-            imgSrc={destination.imgSrc}
-            title={destination.title}
-            location={destination.location}
-            price={destination.price}
-            amenities={destination.amenities}
+      <div className="cardsDiv grid mt-5 lg:grid-cols-3 md:grid-cols-2 gap-10 w-full place-items-center">
+        {DESTINATIONS.map((destination) => (
+          <FeaturedDestinationCard
+            key={destination.id}
+            destination={destination.destination}
+            imageUrl={destination.imgSrc}
+            tours={destination.tours}
           />
         ))}
       </div>
@@ -31,4 +30,4 @@ const FeaturedDestinations = () => {
   );
 };
 
-export default FeaturedDestinations;
+export default Destinations;

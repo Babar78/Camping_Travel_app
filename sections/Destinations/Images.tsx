@@ -4,7 +4,7 @@ import React from "react";
 const Images = () => {
   return (
     <section className="pb-20 lg:pb-32 max-container padding-container flex justify-center">
-      <div className="xs:grid xs:grid-cols-5 grid-cols-1 flex flex-col justify-center items-center gap-10 lg:gap-20 w-fit">
+      <div className="sm:grid sm:grid-cols-5 grid-cols-1 flex flex-col justify-center items-center gap-10 lg:gap-20 w-fit">
         <Image
           src="/sections/Destinations/g1.png"
           alt="Image 1"

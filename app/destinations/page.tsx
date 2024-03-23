@@ -1,6 +1,6 @@
 import CallToAction from "@/components/CallToAction";
 import ExploreByRegion from "@/sections/Destinations/ExploreByRegion";
-import FeaturedDestinations from "@/sections/Destinations/FeaturedDestinations";
+import FeaturedDestinations from "@/sections/Destinations/Destinations";
 import Hero from "@/sections/Destinations/Hero";
 import Images from "@/sections/Destinations/Images";
 import PlanYourTrip from "@/sections/Destinations/PlanYourTrip";
