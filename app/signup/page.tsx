@@ -6,6 +6,7 @@ import React from "react";
 import bcrypt from "bcryptjs";
 
 import { useRouter } from "next/navigation";
+import LoadingBackdrop from "@/components/LoadingBackdrop";
 
 type FormProps = {
   username: string;
@@ -19,6 +20,8 @@ type FormProps = {
 const Signup = () => {
   // Gloabls
   const router = useRouter();
+  // Loading Backdrop
+  const [loading, setLoading] = React.useState(false);
 
   const [data, setData] = React.useState({
     username: "",
@@ -44,6 +47,8 @@ const Signup = () => {
         ...data,
         password: hashedPassword,
       };
+
+      setLoading(true);
 
       try {
         const res = await fetch("/api/signup", {
@@ -80,12 +85,15 @@ const Signup = () => {
         }
       } catch (err) {
         console.log(err);
+      } finally {
+        setLoading(false); // Set loading state to false when the fetch operation is complete
       }
     }
   };
 
   return (
     <>
+      <LoadingBackdrop loading={loading} />
       <div className="lg:grid grid-cols-2 w-screen h-screen relative max-[1024px]:bg-login-bg bg-cover bg-center flex justify-center items-center md:p-0 p-10">
         <div className="space-y-5 lg:bg-transparent bg-gradient-to-t from-[rgba(255,255,255,0.1)] to-[rgba(255,255,255,0.2)] lg:border-0 border-[0.5px] rounded-2xl p-10 flex flex-col justify-center items-center">
           <Image

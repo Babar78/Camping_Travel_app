@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/navigation";
+import LoadingBackdrop from "@/components/LoadingBackdrop";
 
 type FormProps = {
   email: string;
@@ -13,6 +14,9 @@ type FormProps = {
 const Login = () => {
   // Global
   const router = useRouter();
+
+  // Loading Backdrop
+  const [loading, setLoading] = React.useState(false);
 
   const [data, setData] = React.useState({
     email: "",
@@ -26,6 +30,7 @@ const Login = () => {
   // Submit Form
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       const res = await fetch("/api/login", {
@@ -59,11 +64,14 @@ const Login = () => {
     } catch (err) {
       alert("An error occurred while logging in the user");
       console.log(err);
+    } finally {
+      setLoading(false); // Set loading state to false when the fetch operation is complete
     }
   };
 
   return (
     <>
+      <LoadingBackdrop loading={loading} />
       <div className="lg:grid grid-cols-2 w-screen h-screen relative max-[1024px]:bg-login-bg bg-cover bg-center flex justify-center items-center md:p-0 p-10">
         <div className="space-y-5 lg:bg-transparent bg-gradient-to-t from-[rgba(255,255,255,0.1)] to-[rgba(255,255,255,0.2)] lg:border-0 border-[0.5px] rounded-2xl p-10 flex flex-col justify-center items-center">
           <Image
