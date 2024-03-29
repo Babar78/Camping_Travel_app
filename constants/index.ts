@@ -582,22 +582,31 @@ export const TOUR_PACKAGES = [
     amenities: "Nature trails, wildlife viewing",
     price: 45
   },
-  // {
-  //   id: '4',
-  //   title: "Beachside Oasis",
-  //   location: "Outer Banks, North Carolina",
-  //   imgSrc: "/sections/Destinations/Featured/featured-4.jpg",
-  //   amenities: "Beach access, water sports",
-  //   price: 50
-  // },
-  // {
-  //   id: '5',
-  //   title: "Desert Dunes Campground",
-  //   location: "Joshua Tree National Park, California",
-  //   imgSrc: "/sections/Destinations/Featured/featured-5.jpg",
-  //   amenities: "Desert landscape, stargazing",
-  //   price: 35
-  // }
+  {
+    id: '4',
+    title: "Beachside Oasis",
+    location: "Outer Banks, North Carolina",
+    imgSrc: "/sections/Destinations/Featured/featured-4.jpg",
+    amenities: "Beach access, water sports",
+    price: 50
+  },
+  {
+    id: '5',
+    title: "Desert Dunes Camp",
+    location: "Joshua Tree National Park, California",
+    imgSrc: "/sections/Destinations/Featured/featured-5.jpg",
+    amenities: "Desert landscape, stargazing",
+    price: 35
+  },
+  {
+    id: '6',
+    title: "Yosemite National Park",
+    location: "Yosemite National Park, California",
+    imgSrc: "/sections/Destinations/Featured/featured-6.jpg",
+    amenities: "Scenic views, hiking trails",
+    price: 40
+  },
+
 ];
 
 export const DESTINATIONS = [
