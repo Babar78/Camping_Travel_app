@@ -51,8 +51,10 @@ const Login = () => {
         const resData = await res.json();
 
         // save data in local storage
-        localStorage.setItem("username", resData.data.user.username);
-        localStorage.setItem("isLoggedin", resData.data.isLoggedin);
+        if (typeof window !== "undefined") {
+          localStorage.setItem("username", resData.data.user.username);
+          localStorage.setItem("isLoggedin", resData.data.isLoggedin);
+        }
 
         router.replace("/");
 
