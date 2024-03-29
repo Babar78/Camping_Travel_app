@@ -4,10 +4,18 @@ import SurfingIcon from "@mui/icons-material/Surfing";
 import ForestIcon from "@mui/icons-material/Forest";
 import FilterHdrIcon from "@mui/icons-material/FilterHdr";
 import { Button } from "@mui/material";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 const ExploreByRegion = () => {
   const [region, setRegion] = React.useState<string>("mountain");
   const [hoveredRegion, setHoveredRegion] = React.useState<boolean>(false);
+
+  const handleChange = (event: any) => {
+    setRegion(event.target.value);
+  };
 
   return (
     <section className="max-container padding-container space-y-[3.75rem]">
@@ -19,8 +27,8 @@ const ExploreByRegion = () => {
           Camping Destinations Grouped By Region
         </h2>
       </div>
-      <div className="grid grid-cols-4 gap-10">
-        <div className="col-span-1 shadow-md rounded-3xl p-10 flex flex-col">
+      <div className="md:grid xl:grid-cols-4 grid-cols-5 gap-10 md:space-y-0 space-y-5">
+        <div className="xl:col-span-1 md:col-span-2 shadow-md rounded-3xl p-10 md:flex hidden flex-col">
           <div className="heading border-b-[1px] border-green-50 pb-5">
             <h2 className="bold-20 text-green-90">Explore By Region</h2>
             <p className="text-gray-30 regular-16 mt-1">
@@ -64,8 +72,26 @@ const ExploreByRegion = () => {
             </div>
           </div>
         </div>
+        <div className="md:hidden flex w-full justify-end">
+          <FormControl sx={{ width: "250px" }}>
+            <InputLabel id="region-select-dropdown">Select Region</InputLabel>
+            <Select
+              labelId="region-select-dropdown"
+              id="region-dropdown"
+              value={region}
+              label="Select Region"
+              onChange={handleChange}
+            >
+              <MenuItem value={"mountain"} selected>
+                Mountain
+              </MenuItem>
+              <MenuItem value={"coastal"}>Coastal</MenuItem>
+              <MenuItem value={"forest"}>Forest</MenuItem>
+            </Select>
+          </FormControl>
+        </div>
         <div
-          className={`col-span-3 min-h-[450px] rounded-3xl bg-cover bg-center flex justify-center items-center relative hover:cursor-pointer ${
+          className={`xl:col-span-3 md:col-span-3 min-h-[450px] rounded-3xl bg-cover bg-center flex justify-center items-center relative hover:cursor-pointer ${
             hoveredRegion ? "" : "bg-opacity-80"
           }`}
           onMouseEnter={() => setHoveredRegion(true)}
