@@ -70,7 +70,8 @@ const Footer = () => {
 
           <div className="border bg-gray-20" />
           <p className="regular-14 w-full text-center text-gray-30">
-            2023 Hilink | &copy; All rights reserved
+            2024 Hilink | &copy; All rights reserved <br />
+            Created by <span className="text-green-90">Muhammad Babar</span>
           </p>
         </div>
       </footer>
