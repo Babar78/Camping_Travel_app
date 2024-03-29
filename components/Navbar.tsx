@@ -22,7 +22,10 @@ import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const pathname = usePathname();
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(
+    localStorage.getItem("isLoggedin") === "true" ? true : false
+  );
+
   const [openMobileNav, setOpenMobileNav] = React.useState(true);
   const [openProfileMenu, setOpenProfileMenu] =
     React.useState<HTMLElement | null>(null);
@@ -41,6 +44,11 @@ const Navbar = () => {
   const handleMobileNav = () => {
     setOpenMobileNav(!openMobileNav);
   };
+
+  // update the state when user logs out
+  React.useEffect(() => {
+    setIsLoggedIn(localStorage.getItem("isLoggedin") === "true" ? true : false);
+  }, [localStorage.getItem("isLoggedin")]);
 
   return (
     pathname !== "/login" &&
@@ -163,7 +171,7 @@ const Navbar = () => {
                   Account Settings
                 </MenuItem>
                 <Divider />
-                <MenuItem onClick={() => setIsLoggedIn(false)}>
+                <MenuItem onClick={() => localStorage.clear()}>
                   <ListItemIcon>
                     <Logout
                       sx={{

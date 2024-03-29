@@ -3,6 +3,7 @@ import CustomInput from "@/components/CustomInput";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 type FormProps = {
   email: string;
@@ -11,6 +12,8 @@ type FormProps = {
 
 const Login = () => {
   // Global
+  const router = useRouter();
+
   const [data, setData] = React.useState({
     email: "",
     password: "",
@@ -18,6 +21,45 @@ const Login = () => {
 
   const handleChange = (e: string, field: keyof FormProps) => {
     setData({ ...data, [field]: e });
+  };
+
+  // Submit Form
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      // if user already exists show aleat based on response status
+      if (res.status === 400) {
+        const resData = await res.json();
+        alert(resData.message);
+      }
+
+      if (res.ok) {
+        const resData = await res.json();
+
+        // save data in local storage
+        localStorage.setItem("username", resData.data.user.username);
+        localStorage.setItem("isLoggedin", resData.data.isLoggedin);
+
+        router.replace("/");
+
+        setData({
+          email: "",
+          password: "",
+        });
+      }
+    } catch (err) {
+      alert("An error occurred while logging in the user");
+      console.log(err);
+    }
   };
 
   return (
@@ -32,7 +74,7 @@ const Login = () => {
             className="w-auto h-auto min-w-[150px]"
           />
           <h1 className="regular-24 text-white">Login</h1>
-          <form className="space-y-5 max-w-[500px]">
+          <form className="space-y-5 max-w-[500px]" onSubmit={handleSubmit}>
             <CustomInput
               id="email"
               label="Email"
