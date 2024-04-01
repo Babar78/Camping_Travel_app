@@ -52,7 +52,7 @@ const Signup = () => {
 
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/signup`,
+          `https://camping-travel-app.vercel.app/api/signup`,
           {
             method: "POST",
             headers: {

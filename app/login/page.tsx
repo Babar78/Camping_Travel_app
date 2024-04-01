@@ -34,7 +34,7 @@ const Login = () => {
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/login`,
+        `https://camping-travel-app.vercel.app/api/login`,
         {
           method: "POST",
           headers: {
