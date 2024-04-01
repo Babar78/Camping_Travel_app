@@ -18,19 +18,35 @@ import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import PersonIcon from "@mui/icons-material/Person";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import LogoutConfirmationDialogue from "./LogoutConfirmationDialogue";
+
+import Cookies from "js-cookie";
+import { jwtDecode } from "jwt-decode";
+
+interface JwtPayload {
+  userId: string;
+  username: string;
+  isLoggedIn: boolean;
+}
 
 const Navbar = () => {
   const pathname = usePathname();
+  const token = Cookies.get("token");
+  const decodedToken = token ? jwtDecode<JwtPayload>(token) : null;
 
   // Confirm Before Loging Out
   const [showConfirmationDialogue, setShowConfirmationDialogue] =
     React.useState(false);
 
   const [isLoggedIn, setIsLoggedIn] = React.useState(
-    localStorage.getItem("isLoggedin") === "true" ? true : false
+    decodedToken?.isLoggedIn ?? false
   );
+
+  // useEffect to check if user is logged in
+  React.useEffect(() => {
+    setIsLoggedIn(decodedToken?.isLoggedIn ?? false);
+  }, [token]);
 
   const [openMobileNav, setOpenMobileNav] = React.useState(true);
   const [openProfileMenu, setOpenProfileMenu] =
@@ -50,11 +66,6 @@ const Navbar = () => {
   const handleMobileNav = () => {
     setOpenMobileNav(!openMobileNav);
   };
-
-  // update the state when user logs out
-  React.useEffect(() => {
-    setIsLoggedIn(localStorage.getItem("isLoggedin") === "true" ? true : false);
-  }, [localStorage.getItem("isLoggedin")]);
 
   // Handle Logout Button Click
 

@@ -32,34 +32,26 @@ const LogoutConfirmationDialogue = ({
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button
+          {/* Cancel Logout */}
+          <button
+            className="bg-gray-400 hover:bg-gray-500 text-white py-2 px-4 rounded"
             onClick={() => setShowConfirmationDialogue(false)}
-            variant="contained"
-            sx={{
-              backgroundColor: "gray",
-              color: "white",
-
-              "&:hover": {
-                backgroundColor: "gray",
-              },
-            }}
           >
             Cancel
-          </Button>
-          <Button
+          </button>
+
+          {/* Logout User */}
+          <button
+            className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded"
             onClick={() => {
-              localStorage.clear();
+              // Logout User
+              // Remove Token
+              document.cookie = `token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
               setShowConfirmationDialogue(false);
             }}
-            autoFocus
-            variant="contained"
-            sx={{
-              color: "white",
-            }}
-            color="error"
           >
             Logout
-          </Button>
+          </button>
         </DialogActions>
       </Dialog>
     </React.Fragment>

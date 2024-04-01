@@ -50,14 +50,10 @@ const Login = () => {
       if (res.ok) {
         const resData = await res.json();
 
-        // save data in local storage
-        if (typeof window !== "undefined") {
-          localStorage.setItem("username", resData.data.user.username);
-          localStorage.setItem("isLoggedin", resData.data.isLoggedin);
-        }
-
+        // Tocken Management
+        const { token } = resData;
+        document.cookie = `token=${token}; path=/`;
         router.replace("/");
-
         setData({
           email: "",
           password: "",
