@@ -33,16 +33,13 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const res = await fetch(
-        `https://camping-travel-app.vercel.app/api/login`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const res = await fetch(`/api/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
       // if user already exists show aleat based on response status
       if (res.status === 400) {
