@@ -74,7 +74,7 @@ const Signup = () => {
             localStorage.setItem("isLoggedin", resData.data.isLoggedin);
           }
 
-          router.replace("/");
+          router.replace("/login");
 
           setData({
             username: "",
