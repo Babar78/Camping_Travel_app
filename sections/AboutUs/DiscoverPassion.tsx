@@ -9,7 +9,7 @@ const DiscoverPassion = () => {
           Discover Our Passion for Outdoor Exploration
         </h2>
         <p className="regular-16 text-center">
-          At Hilink, we're more than just a platform for camping enthusiasts;
+          At TravelTrek, we're more than just a platform for camping enthusiasts;
           we're a community united by our love for adventure and the great
           outdoors. Our mission is to inspire, inform, and empower individuals
           to connect with nature and create unforgettable memories under the

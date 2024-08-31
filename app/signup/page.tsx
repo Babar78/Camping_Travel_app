@@ -99,7 +99,7 @@ const Signup = () => {
       <div className="lg:grid grid-cols-2 w-screen h-screen relative max-[1024px]:bg-login-bg bg-cover bg-center flex justify-center items-center md:p-0 p-10">
         <div className="space-y-5 lg:bg-transparent bg-gradient-to-t from-[rgba(255,255,255,0.1)] to-[rgba(255,255,255,0.2)] lg:border-0 border-[0.5px] rounded-2xl p-10 flex flex-col justify-center items-center">
           <Image
-            src="/hilink-logo.svg"
+            src="/travelTrek-logo.svg"
             alt="logo"
             width={50}
             height={40}
@@ -191,7 +191,7 @@ const Signup = () => {
         <div className="hidden lg:flex lg:bg-login-bg bg-cover bg-center w-full h-full justify-center items-center">
           <div className="text-white flex flex-col items-center">
             <Image
-              src="/logo/hilink-logo-white.svg"
+              src="/logo/travelTrek-logo-white.svg"
               alt="logo"
               width={50}
               height={40}

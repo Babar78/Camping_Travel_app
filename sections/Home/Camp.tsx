@@ -55,9 +55,9 @@ const Camp = () => {
       <div className="hide-scrollbar flex h-[340px] w-full items-start justify-start gap-8 overflow-x-auto lg:h-[400px] xl:h-[640px]">
         <CampSite
           backgroundImage="bg-bg-img-1"
-          title="Putuk Truno Camp"
-          subtitle="Prigen, Pasuruan"
-          peopleJoined="50+ Joined"
+          title="Fairy Meadows"
+          subtitle="Regional park, Pakistan"
+          peopleJoined="150+ Joined"
         />
         <CampSite
           backgroundImage="bg-bg-img-2"
@@ -72,7 +72,7 @@ const Camp = () => {
           <h2 className="regular-24 md:regular-32 2xl:regular-64 capitalize text-white">
             <strong>Feeling Lost</strong> And Not Knowing The Way?
           </h2>
-          <p className="regular-14 xl:regular-16 mt-5 text-white">
+          <p className="regular-16 xl:regular-20 mt-5 text-white">
             Starting from the anxiety of the climbers when visiting a new
             climbing location, the possibility of getting lost is very large.
             That's why we are here for those of you who want to start an

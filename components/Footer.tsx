@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="flex flex-col items-start justify-center gap-[10%] md:flex-row">
             <Link href="/" className="mb-10">
               <Image
-                src="hilink-logo.svg"
+                src="travelTrek-logo.svg"
                 alt="logo"
                 width={74}
                 height={29}
@@ -70,7 +70,7 @@ const Footer = () => {
 
           <div className="border bg-gray-20" />
           <p className="regular-14 w-full text-center text-gray-30">
-            2024 Hilink | &copy; All rights reserved <br />
+            2024 TravelTrek | &copy; All rights reserved <br />
             Created by <span className="text-green-90">Muhammad Babar</span>
           </p>
         </div>

@@ -83,7 +83,7 @@ const Navbar = () => {
         <nav className="flexBetween max-container padding-container relative z-30 py-5 bg-transparent min-h-[100px]">
           <Link href="/">
             <Image
-              src="/hilink-logo.svg"
+              src="/travelTrek-logo.svg"
               alt="logo"
               width={74}
               height={29}

@@ -8,7 +8,7 @@ const testimonials = [
     experience: "Frequent Camper",
     imageSrc: "/sections/about-us/testimonial-1.jpg",
     description:
-      "Outstanding Experience! From the breathtaking views to the seamless logistics, our trip organized by Hilink exceeded all expectations. The knowledgeable guides made every moment memorable, and the attention to detail ensured a stress-free adventure. Can't wait to book our next journey with them!",
+      "Outstanding Experience! From the breathtaking views to the seamless logistics, our trip organized by TravelTrek exceeded all expectations. The knowledgeable guides made every moment memorable, and the attention to detail ensured a stress-free adventure. Can't wait to book our next journey with them!",
     rating: 5,
   },
   {
@@ -16,7 +16,7 @@ const testimonials = [
     experience: "Adventure Seeker",
     imageSrc: "/sections/about-us/testimonial-2.jpg",
     description:
-      "Unforgettable Journey! Thanks to Hilink, we embarked on an unforgettable journey filled with discovery and excitement. The carefully curated itinerary introduced us to hidden gems and cultural treasures we wouldn't have found on our own. Exceptional service, knowledgeable guides, and impeccable planning made this trip one for the books!",
+      "Unforgettable Journey! Thanks to TravelTrek, we embarked on an unforgettable journey filled with discovery and excitement. The carefully curated itinerary introduced us to hidden gems and cultural treasures we wouldn't have found on our own. Exceptional service, knowledgeable guides, and impeccable planning made this trip one for the books!",
     rating: 5,
   },
   {
@@ -24,7 +24,7 @@ const testimonials = [
     experience: "Family Camper",
     imageSrc: "/sections/about-us/testimonial-3.jpg",
     description:
-      "Highly Recommend! Our recent trip with Hilink was nothing short of incredible. From start to finish, every aspect was meticulously planned, allowing us to relax and immerse ourselves in the beauty of our surroundings. The passionate guides shared fascinating insights, and the personalized touches made us feel truly valued as customers. We'll definitely be returning for another adventure!",
+      "Highly Recommend! Our recent trip with TravelTrek was nothing short of incredible. From start to finish, every aspect was meticulously planned, allowing us to relax and immerse ourselves in the beauty of our surroundings. The passionate guides shared fascinating insights, and the personalized touches made us feel truly valued as customers. We'll definitely be returning for another adventure!",
     rating: 5,
   },
 ];
